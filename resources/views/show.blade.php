@@ -17,12 +17,22 @@
                 <p class="mt-8">
                 When their mother takes off on a business trip, two bickering brothers unite to secretly attend the hottest party of the year before she returns.
                 </p>
-                <div class="t-12 mt-12">
-                    <h4 class="text-gray-300 font-semibold">Starring:</h4>
-                    <div class="flex mt-3">
-                        <span>Babil Khan, Amrith Jayan, Medha Rana</span>
+                <div class="t-12 mt-12 flex flex-row">
+                    <div>
+                        <h4 class="font-semibold">Director:</h4>
+                        <div class="mt-2">
+                            <span class="text-gray-300">Vatsal Neelakantan</span>
+                        </div>
+                    </div>
+                    <div class="sm:ml-2 md:ml-7">
+                        <h4 class= "font-semibold">Writers:</h4>
+                        <div class="mt-2">
+                            <div class="text-gray-300">Vatsal Neelakantan, Sapan Verma</div>
+                        </div>
                     </div>
                 </div>
+
+
                 <div class="mt-12">
                   <a href="https://youtu.be/Lz_jlyGDoqM?si=0TTaNNnx4xoklMMs">
                     <button class="flex items-center bg-red-700 rounded font-semibold px-5 py-4 hover:bg-red-800 transition ease-in-out duration-150">
