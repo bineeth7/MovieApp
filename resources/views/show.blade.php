@@ -31,8 +31,6 @@
                         </div>
                     </div>
                 </div>
-
-
                 <div class="mt-12">
                   <a href="https://youtu.be/Lz_jlyGDoqM?si=0TTaNNnx4xoklMMs">
                     <button class="flex items-center bg-red-700 rounded font-semibold px-5 py-4 hover:bg-red-800 transition ease-in-out duration-150">
