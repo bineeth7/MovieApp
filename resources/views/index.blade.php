@@ -7,13 +7,13 @@
             <h2 class="uppercase tracking-wider text-cyan-400 text-lg font-semibold">New Releases</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-7">
                 <div class="mt-8">
-                    <a href="#">
+                    <a href="movie">
                         <img src="/images/fridaynightplan.jpg" alt="Friday Night Plan" class="hover:opacity-75 transition ease-in-out duration-150">
                     </a>
                     <div class="mt-2">
                         <a href="movie" class="text-lg mt-2 hover:text-gray-400">Friday Night Plan</a>
                         <div class="flex item-center tect-gray-400 text-sm mt-2">
-                           <span>2023</span>
+                            <span>2023</span>
                             <span class="ml-1">|</span>
                             <span><img src="/images/star.png" alt="" class="w-3 mt-1 ml-1"></span>
                             <span class="mx-1">U/A 13+</span>
