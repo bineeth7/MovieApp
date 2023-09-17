@@ -6,7 +6,8 @@
         <div class="new-releases">
             <h2 class="uppercase tracking-wider text-cyan-400 text-lg font-semibold">New Releases</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-7">
-                <div class="mt-8">
+            <!-- start first movie -->
+            <div class="mt-8">
                     <a href="#">
                         <img src="/images/fridaynightplan.jpg" alt="Friday Night Plan" class="hover:opacity-75 transition ease-in-out duration-150">
                     </a>
@@ -25,7 +26,7 @@
                     </div>
                     </div>
                 </div>
-                
+                <!-- end first movie -->
                 <div class="mt-8">
                     <a href="#">
                         <img src="/images/happyending.jpg" alt="Happy Ending" class="hover:opacity-75 transition ease-in-out duration-150">
