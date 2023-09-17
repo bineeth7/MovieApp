@@ -3,7 +3,7 @@
 @section('content')
     <div class="movie-info border-b border-cyan-400">
         <div class="container mx-auto px-4 py-16 flex flex-col md:flex-row">
-            <img src="/images/fridaynightplan.jpg" alt="Friday Night Plan" class="w-96">
+            <img src="/images/fridaynightplan.jpg" alt="Friday Night Plan" class="w-96 md:shrink-0">
             <div class="md:ml-24">
                 <h2 class="text-4xl font-semibold">Friday Night Plan (2023)</h2>
                 <div class="flex flex-wrap items-center text-gray-400 text-sm mt-1">
