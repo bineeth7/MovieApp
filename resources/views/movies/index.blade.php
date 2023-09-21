@@ -7,10 +7,9 @@
         <div class="new-releases">
             <h2 class="uppercase tracking-wider text-cyan-400 text-lg font-semibold">New Releases</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-7">
-            <!-- start first movie -->
+            
+        <!-- start first movie -->
 
-    <h1>Popular Movies</h1>
-    <ul class="movie-list">
         @foreach($movies as $movie)
             <li class="movie">
             @if (!empty($movie['poster_path']))
@@ -19,8 +18,7 @@
                 <h2 class="movie-title">{{ $movie['title'] ?? 'No Title' }}</h2>
                 <p class="movie-release-date">{{ $movie['release_date'] ?? 'Unknown Release Date' }}</p>
             </li>
-        @endforeach
-    </ul>
+
     
             <div class="mt-8">
                     <a href="#">
@@ -41,185 +39,10 @@
                     </div>
                     </div>
                 </div>
-                <!-- end first movie -->
-                <div class="mt-8">
-                    <a href="#">
-                        <img src="/images/happyending.jpg" alt="Happy Ending" class="hover:opacity-75 transition ease-in-out duration-150">
-                    </a>
-                    <div class="mt-2">
-                        <a href="#" class="text-lg mt-2 hover:text-gray-400">Happy Ending</a>
-                        <div class="flex item-center tect-gray-400 text-sm mt-2">
-                            <span>2023</span>
-                            <span class="ml-1">|</span>
-                            <span><img src="/images/star.png" alt="" class="w-3 mt-1 ml-1"></span>
-                            <span class="mx-1">A</span>
-                            <span>|</span>
-                            <span class="mx-1">1h 33m</span>
-                        </div>
-                        <div class="text-gray-400 text-sm">
-                        Drama/Comedy
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="mt-8">
-                    <a href="#">
-                        <img src="/images/adayandahalf.jpg" alt="A Day and a Half" class="hover:opacity-75 transition ease-in-out duration-150">
-                    </a>
-                    <div class="mt-2">
-                        <a href="#" class="text-lg mt-2 hover:text-gray-400">A Day and a Half</a>
-                        <div class="flex item-center tect-gray-400 text-sm mt-2">
-                            <span>2023</span>
-                            <span class="ml-1">|</span>
-                            <span><img src="/images/star.png" alt="" class="w-3 mt-1 ml-1"></span>
-                            <span class="mx-1">U/A 16+</span>
-                            <span>|</span>
-                            <span class="mx-1">1h 35m</span>
-                        </div>
-                        <div class="text-gray-400 text-sm">
-                            Drama
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="mt-8">
-                    <a href="#">
-                        <img src="/images/chooselove.jpg" alt="Choose Love" class="hover:opacity-75 transition ease-in-out duration-150">
-                    </a>
-                    <div class="mt-2">
-                        <a href="#" class="text-lg mt-2 hover:text-gray-400">Choose Love</a>
-                        <div class="flex item-center tect-gray-400 text-sm mt-2">
-                            <span>2023</span>
-                            <span class="ml-1">|</span>
-                            <span><img src="/images/star.png" alt="" class="w-3 mt-1 ml-1"></span>
-                            <span class="mx-1">U/A 13+</span>
-                            <span>|</span>
-                            <span class="mx-1">1h 17m</span>
-                        </div>
-                        <div class="text-gray-400 text-sm">
-                            Romance
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="mt-8">
-                    <a href="#">
-                        <img src="/images/thegreatseduction.jpg" alt="The Great Seduction" class="hover:opacity-75 transition ease-in-out duration-150">
-                    </a>
-                    <div class="mt-2">
-                        <a href="#" class="text-lg mt-2 hover:text-gray-400">The Great Seduction</a>
-                        <div class="flex item-center tect-gray-400 text-sm mt-2">
-                            <span>2023</span>
-                            <span class="ml-1">|</span>
-                            <span><img src="/images/star.png" alt="" class="w-3 mt-1 ml-1"></span>
-                            <span class="mx-1">U/A 16+</span>
-                            <span>|</span>
-                            <span class="mx-1">1h 35m</span>
-                        </div>
-                        <div class="text-gray-400 text-sm">
-                        Comedy
-                        </div>
-                    </div>
-                </div>  <!-- first row end -->
-                <div class="mt-8">
-                    <a href="#">
-                        <img src="/images/heartofstone.jpg" alt="Heart of Stone" class="hover:opacity-75 transition ease-in-out duration-150">
-                    </a>
-                    <div class="mt-2">
-                        <a href="#" class="text-lg mt-2 hover:text-gray-400">Heart of Stone</a>
-                        <div class="flex item-center tect-gray-400 text-sm mt-2">
-                            <span>2023</span>
-                            <span class="ml-1">|</span>
-                            <span><img src="/images/star.png" alt="" class="w-3 mt-1 ml-1"></span>
-                            <span class="mx-1">U/A 13+</span>
-                            <span>|</span>
-                            <span class="mx-1">2h 5m</span>
-                        </div>
-                        <div class="text-gray-400 text-sm">
-                        Action/Mystery
-                        </div>
-                    </div>
-                </div>
-                 
-                <div class="mt-8">
-                    <a href="#">
-                        <img src="/images/miraculousladybug&catnoirthemovie.jpg" alt="Miraculous: Ladybug & Cat Noir, The Movie" class="hover:opacity-75 transition ease-in-out duration-150">
-                    </a>
-                    <div class="mt-2">
-                        <a href="#" class="text-lg mt-2 hover:text-gray-400">Miraculous: Ladybug & Cat Noir, The Movie</a>
-                        <div class="flex item-center tect-gray-400 text-sm mt-2">
-                            <span>2023</span>
-                            <span class="ml-1">|</span>
-                            <span><img src="/images/star.png" alt="" class="w-3 mt-1 ml-1"></span>
-                            <span class="mx-1">U/A 7+</span>
-                            <span>|</span>
-                            <span class="mx-1">1h 42m</span>
-                        </div>
-                        <div class="text-gray-400 text-sm">
-                        Adventure/Animation
-                       </div>
-                    </div>
-                </div>
-                
-                <div class="mt-8">
-                    <a href="#">
-                        <img src="/images/areyoutheregodit'smemargaret.jpg" alt="Are You There God? It's Me, Margaret" class="hover:opacity-75 transition ease-in-out duration-150">
-                    </a>
-                    <div class="mt-2">
-                        <a href="#" class="text-lg mt-2 hover:text-gray-400">Are You There God? It's Me, Margaret</a>
-                        <div class="flex item-center tect-gray-400 text-sm mt-2">
-                            <span>2023</span>
-                            <span class="ml-1">|</span>
-                            <span><img src="/images/star.png" alt="" class="w-3 mt-1 ml-1"></span>
-                            <span class="mx-1">U/A 13+</span>
-                            <span>|</span>
-                            <span class="mx-1">1h 46m</span>
-                        </div>
-                        <div class="text-gray-400 text-sm">
-                        Drama/Comedy
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="mt-8">
-                    <a href="#">
-                        <img src="/images/themonkeyking.jpg" alt="The Monkey King" class="hover:opacity-75 transition ease-in-out duration-150">
-                    </a>
-                    <div class="mt-2">
-                        <a href="#" class="text-lg mt-2 hover:text-gray-400">The Monkey King</a>
-                        <div class="flex item-center tect-gray-400 text-sm mt-2">
-                            <span>2023</span>
-                            <span class="ml-1">|</span>
-                            <span><img src="/images/star.png" alt="" class="w-3 mt-1 ml-1"></span>
-                            <span class="mx-1">U/A 7+</span>
-                            <span>|</span>
-                            <span class="mx-1">1h 36m</span>
-                        </div>
-                        <div class="text-gray-400 text-sm">
-                        Fantasy/Family
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-8">
-                    <a href="#">
-                        <img src="/images/bro.jpg" alt="Bro" class="hover:opacity-75 transition ease-in-out duration-150">
-                    </a>
-                    <div class="mt-2">
-                        <a href="#" class="text-lg mt-2 hover:text-gray-400">Bro</a>
-                        <div class="flex item-center tect-gray-400 text-sm mt-2">
-                            <span>2023</span>
-                            <span class="ml-1">|</span>
-                            <span><img src="/images/star.png" alt="" class="w-3 mt-1 ml-1"></span>
-                            <span class="mx-1">U/A 13+</span>
-                            <span>|</span>
-                            <span class="mx-1">2h 11m</span>
-                        </div>
-                        <div class="text-gray-400 text-sm">
-                        Fantasy/Comedy
-                        </div>
-                </div>
-            </div>
-        </div>  
+        @endforeach
+        </div> 
+        <!-- end first movie -->
+             
         <!-- end new releases -->
         <!-- now playing start -->
         <div class="now-playing">
