@@ -1,4 +1,5 @@
 @extends('layouts.main')
+@extends('layouts\main')
 
 @section('content')
     <div class="container mx-auto px-4 pt-16">
@@ -7,6 +8,20 @@
             <h2 class="uppercase tracking-wider text-cyan-400 text-lg font-semibold">New Releases</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-7">
             <!-- start first movie -->
+
+    <h1>Popular Movies</h1>
+    <ul class="movie-list">
+        @foreach($movies as $movie)
+            <li class="movie">
+            @if (!empty($movie['poster_path']))
+                <img src="{{ $movie['poster_path'] }}" alt="{{ $movie['title'] }}" class="movie-poster">
+            @endif
+                <h2 class="movie-title">{{ $movie['title'] ?? 'No Title' }}</h2>
+                <p class="movie-release-date">{{ $movie['release_date'] ?? 'Unknown Release Date' }}</p>
+            </li>
+        @endforeach
+    </ul>
+    
             <div class="mt-8">
                     <a href="#">
                         <img src="/images/fridaynightplan.jpg" alt="Friday Night Plan" class="hover:opacity-75 transition ease-in-out duration-150">
