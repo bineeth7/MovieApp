@@ -11,7 +11,7 @@ class MoviesController extends Controller
 {
     $apiKey = env('TMDB_API_KEY');
 
-    $movies = Http::get('https://api.themoviedb.org/3/movie/popular?api_key=' . $apiKey);
+    $movies = Http::get('http://www.omdbapi.com/?i=tt3896198&apikey=' . $apiKey);
 
     return view('movies.index', [
         'movies' => $movies->json(),
