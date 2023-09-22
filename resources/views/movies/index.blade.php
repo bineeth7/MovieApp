@@ -1,5 +1,4 @@
 @extends('layouts.main')
-@extends('layouts\main')
 
 @section('content')
     <div class="container mx-auto px-4 pt-16">
@@ -9,7 +8,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-7">
             <!-- start first movie -->
 
-    <h1>Popular Movies</h1>
+    <!-- <h1>Popular Movies</h1>
     <ul class="movie-list">
         @foreach($movies as $movie)
             <li class="movie">
@@ -20,7 +19,7 @@
                 <p class="movie-release-date">{{ $movie['release_date'] ?? 'Unknown Release Date' }}</p>
             </li>
         @endforeach
-    </ul>
+    </ul> -->
     
             <div class="mt-8">
                     <a href="#">
