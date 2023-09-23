@@ -26,7 +26,7 @@
             @foreach($movies as $movie)
                 <div class="mt-8">
                     <a href="#">
-                        <img src="/images/fridaynightplan.jpg" alt="Friday Night Plan" class="hover:opacity-75 transition ease-in-out duration-150">
+                        <img src="{{'https://image.tmdb.org/t/p/w500/'.$movie['poster_path'] }}" alt="poster" class="hover:opacity-75 transition ease-in-out duration-150">
                     </a>
                     <div class="mt-2">
                         <a href="movie" class="text-lg mt-2 hover:text-gray-400">{{ $movie['original_title']}}</a>
