@@ -29,12 +29,12 @@
                         <img src="/images/fridaynightplan.jpg" alt="Friday Night Plan" class="hover:opacity-75 transition ease-in-out duration-150">
                     </a>
                     <div class="mt-2">
-                        <a href="movie" class="text-lg mt-2 hover:text-gray-400">Friday Night Plan</a>
+                        <a href="movie" class="text-lg mt-2 hover:text-gray-400">{{ $movie['original_title']}}</a>
                         <div class="flex item-center tect-gray-400 text-sm mt-2">
-                           <span>2023</span>
+                           <span>{{ \Carbon\Carbon::parse($movie['release_date'])->format('M d, Y') }}</span>
                             <span class="ml-1">|</span>
                             <span><img src="/images/star.png" alt="" class="w-3 mt-1 ml-1"></span>
-                            <span class="mx-1">U/A 13+</span>
+                            <span class="mx-1">{{ $movie['vote_average']*10 .'%'}}</span>
                             <span>|</span>
                             <span class="mx-1">1h 49m</span>
                         </div>
