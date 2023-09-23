@@ -8,15 +8,17 @@ use Illuminate\Support\Facades\Http;
 class MoviesController extends Controller
 {
     public function index()
-{
-    $apiKey = env('TMDB_API_KEY');
-
-    $movies = Http::get('https://api.themoviedb.org/3/movie/popular?api_key=' . $apiKey);
-
-    return view('movies.index', [
-        'movies' => $movies->json(),
-    ]);
-}
+    {
+        $apiKey = env('TMDB_API_KEY');
+    
+        $movies = Http::get('https://api.themoviedb.org/3/movie/popular?api_key=' . $apiKey)->json()['results'];
+        dump($movies);
+        return view('movies.index', [
+            'movies' => $movies,
+            
+        ]);
+    }
+    
 
 
     /**
