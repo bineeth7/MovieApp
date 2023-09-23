@@ -3,19 +3,6 @@
 
 @section('content')
 
-    <!-- <ul class="movie-list">
-        @foreach($movies as $movie)
-            <li class="movie">
-            @if (!empty($movie['poster_path']))
-                <img src="{{ $movie['poster_path'] }}" alt="{{ $movie['title'] }}" class="movie-poster">
-            @endif
-                <h2 class="movie-title">{{ $movie['title'] ?? 'No Title' }}</h2>
-                <p class="movie-release-date">{{ $movie['release_date'] ?? 'Unknown Release Date' }}</p>
-            </li>
-        @endforeach
-    </ul> -->
-
-
     <div class="container mx-auto px-4 pt-16">
 
         <!-- new releases start -->
@@ -23,7 +10,7 @@
             <h2 class="uppercase tracking-wider text-cyan-400 text-lg font-semibold">New Releases</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-7">
             <!-- start first movie -->
-            @foreach($movies as $movie)
+            @foreach($popularMovies as $movie)
                 <div class="mt-8">
                     <a href="#">
                         <img src="{{'https://image.tmdb.org/t/p/w500/'.$movie['poster_path'] }}" alt="poster" class="hover:opacity-75 transition ease-in-out duration-150">
@@ -36,11 +23,13 @@
                             <span><img src="/images/star.png" alt="" class="w-3 mt-1 ml-1"></span>
                             <span class="mx-1">{{ $movie['vote_average']*10 .'%'}}</span>
                             <span>|</span>
-                            <span class="mx-1">1h 49m</span>
+                            <!-- <span class="mx-1">1h 49m</span> -->
                         </div>
                         <div class="text-gray-400 text-sm">
-                        Drama/Comedy
-                    </div>
+                            @foreach ($movie['genre_ids'] as $genre)
+                                {{ $genres->get($genre) }}@if (!$loop->last), @endif
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             @endforeach
