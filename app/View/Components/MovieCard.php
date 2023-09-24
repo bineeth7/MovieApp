@@ -8,12 +8,16 @@ use Illuminate\View\Component;
 
 class MovieCard extends Component
 {
+    public $movie;
+    public $genres;
+
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct($movie, $genres)
     {
-        //
+        $this->movie = $movie;
+        $this->genres = $genres;
     }
 
     /**
