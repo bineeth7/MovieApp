@@ -23,7 +23,7 @@
                             <span><img src="/images/star.png" alt="" class="w-3 mt-1 ml-1"></span>
                             <span class="mx-1">{{ $movie['vote_average']*10 .'%'}}</span>
                             <span>|</span>
-                            <!-- <span class="mx-1">1h 49m</span> -->
+                            <span class="mx-1">1h 49m</span>
                         </div>
                         <div class="text-gray-400 text-sm">
                             @foreach ($movie['genre_ids'] as $genre)
@@ -45,6 +45,7 @@
         <div class="now-playing">
             <h2 class="uppercase tracking-wider text-cyan-400 text-lg font-semibold">Now Playing</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-7">
+           
                 <div class="mt-8">
                     <a href="#">
                         <img src="/images/standbymedoraemon2.jpg" alt="STAND BY ME Doraemon 2" class="hover:opacity-75 transition ease-in-out duration-150">
@@ -64,6 +65,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
         <!-- ends now playing -->
