@@ -3,19 +3,23 @@
 @section('content')
     <div class="movie-info border-b border-cyan-400">
         <div class="container mx-auto px-4 py-16 flex flex-col md:flex-row">
-            <img src="/images/fridaynightplan.jpg" alt="Friday Night Plan" class="w-96 md:shrink-0">
+            <img src="{{'https://image.tmdb.org/t/p/w500/'.$movie['backdrop_path'] }}" alt="backdrop path" class="w-96 md:shrink-0">
             <div class="md:ml-24">
-                <h2 class="text-4xl font-semibold">Friday Night Plan (2023)</h2>
+                <h2 class="text-4xl font-semibold">{{ $movie['original_title']}}</h2>
                 <div class="flex flex-wrap items-center text-gray-400 text-sm mt-1">
                     <span><img src="/images/star.png" alt="" class="w-4 ml-1"></span>
-                    <span class="mx-1">U/A 13+</span>
+                    <span class="mx-1">{{ $movie['vote_average']*10 .'%'}}</span>
                     <span>|</span>
-                    <span class="mx-1">1h 49m</span>
+                    <span class="mx-1">{{ \Carbon\Carbon::parse($movie['release_date'])->format('M d, Y') }}</span>
                     <span>|</span>
-                    <span class="mx-1">Drama/Comedy</span>
+                    <span class="mx-1">
+                    @foreach ($movie['genres'] as $genre)
+                        {{ $genre['name'] }}@if (!$loop->last), @endif
+                    @endforeach
+                    </span>
                 </div>
                 <p class="mt-8">
-                When their mother takes off on a business trip, two bickering brothers unite to secretly attend the hottest party of the year before she returns.
+                     {{ $movie['overview']}}
                 </p>
                 <div class="t-12 mt-12">
                     <h4 class="text-gray-300 font-semibold">Starring:</h4>

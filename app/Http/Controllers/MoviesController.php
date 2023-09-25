@@ -21,7 +21,7 @@ class MoviesController extends Controller
             return [$genre['id']=> $genre['name']];
         });
 
-        //dump($popularMovies);
+        dump($popularMovies);
        //dump($nowPlayingMovies);
        // dump($genres);
 
@@ -56,7 +56,16 @@ class MoviesController extends Controller
      */
     public function show(string $id)
     {
-        return view('show');
+        $apiKey = env('TMDB_API_KEY');
+    
+        $movie = Http::get('https://api.themoviedb.org/3/movie/' . $id . '?api_key=' . $apiKey)->json();
+               
+        dump($movie);
+        
+        return view('show',[
+            'movie' => $movie,
+        ]);
+
     }
 
     /**
