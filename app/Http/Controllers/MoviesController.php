@@ -22,7 +22,7 @@ class MoviesController extends Controller
         });
 
         //dump($popularMovies);
-       dump($nowPlayingMovies);
+       //dump($nowPlayingMovies);
        // dump($genres);
 
         return view('movies.index', [
