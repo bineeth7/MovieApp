@@ -23,7 +23,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-7">
             <!-- start movie loop-->
             @foreach($nowPlayingMovies as $movie)
-                <!-- <x-movie-card :movie="$movie" :genres="$genres"/> -->
+                <x-movie-card :movie="$movie" :genres="$genres"/>
             @endforeach
             <!-- end movie loop-->
             </div>
