@@ -12,7 +12,7 @@
         <div class="container mx-auto flex items-center justify-between px-4 py-4">
             <ul class="flex flex-col md:flex-row items-center">
                 <li>
-                    <a href="#">
+                    <a href="{{ route('movies.index') }}">
                     <img class="w-7 h=7" src="https://img.icons8.com/metro/26/movie-projector.png" alt="movie-projector"/>
                     </a>
                 </li> 

@@ -58,7 +58,7 @@ class MoviesController extends Controller
     {
         $apiKey = env('TMDB_API_KEY');
     
-        $movie = Http::get('https://api.themoviedb.org/3/movie/' . $id . '?api_key=' . $apiKey . '&append_to_response=credits,videos,images')->json();
+        $movie = Http::get('https://api.themoviedb.org/3/movie/' . $id . '?api_key=' . $apiKey . 'append_to_response=credits,videos,images')->json();
                
         dump($movie);
         
