@@ -21,9 +21,9 @@ class MoviesController extends Controller
             return [$genre['id']=> $genre['name']];
         });
 
-        dump($popularMovies);
-       //dump($nowPlayingMovies);
-       // dump($genres);
+        //dump($popularMovies);
+        //dump($nowPlayingMovies);
+        //dump($genres);
 
         return view('movies.index', [
             'popularMovies' => $popularMovies,
@@ -60,7 +60,7 @@ class MoviesController extends Controller
     
         $movie = Http::get('https://api.themoviedb.org/3/movie/' . $id . '?api_key=' . $apiKey . '&append_to_response=credits,videos,images')->json();
                
-        dump($movie);
+        //dump($movie);
         
         return view('show',[
             'movie' => $movie,

@@ -68,108 +68,30 @@
 
 <!-- Cast -->
 <div class="movie-cast border-b border-cyan-400">
-    <div class="container mx-auto px-4 py-16">
+    <div class="container mx-auto px-4 py-10">
         <h2 class="text-4xl font-semibold text-cyan-400">Cast</h2>
         <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-5">
             
-            <!-- @foreach ($movie['credits']['cast'] as $cast) -->
+            @foreach ($movie['credits']['cast'] as $cast)
+            @if ($loop ->index <8)
             <div class="mt-8">
                 <a href="#">
-                    <img src="/images/cast/babil.jpg" alt="Babil" class="hover:opacity-75 transition ease-in-out duration-150">
+                    <img src="{{ 'https://image.tmdb.org/t/p/w300'.$cast['profile_path'] }}" alt="" class="hover:opacity-75 transition ease-in-out duration-150">
                 </a>
                 <div class="mt-2">
-                    <a href="#" class="text-lg mt-2 hover:text-gray-400">Babil Khan</a>
+                    <a href="#" class="text-lg mt-2 hover:text-gray-400">{{ $cast['original_name']}}</a>
                         <div class="text-gray-400 text-sm">
-                            Movie name
+                            {{ $cast['character']}}
                         </div>
                 </div>
             </div>
-            <!-- @endforeach -->
-
-
-
-            <div class="mt-8">
-                <a href="#">
-                    <img src="/images/cast/medha.jpg" alt="Medha" class="hover:opacity-75 transition ease-in-out duration-150">
-                </a>
-                <div class="mt-2">
-                    <a href="#" class="text-lg mt-2 hover:text-gray-400">Medha Rana</a>
-                    <!-- <div class="text-gray-400 text-sm">
-                            Movie name
-                        </div> -->
-                </div>
-            </div>
-            <div class="mt-8">
-                <a href="#">
-                    <img src="/images/cast/aadhya.jpg" alt="Aadhya" class="hover:opacity-75 transition ease-in-out duration-150">
-                </a>
-                <div class="mt-2">
-                    <a href="#" class="text-lg mt-2 hover:text-gray-400">Aadhya Anand</a>
-                    <!-- <div class="text-gray-400 text-sm">
-                            Sci-fi/Family
-                        </div> -->
-                </div>
-            </div>
-            <div class="mt-8">
-                <a href="#">
-                    <img src="/images/cast/juhi.jpg" alt="Juhi" class="hover:opacity-75 transition ease-in-out duration-150">
-                </a>
-                <div class="mt-2">
-                    <a href="#" class="text-lg mt-2 hover:text-gray-400">Juhi Chawla</a>
-                    <!-- <div class="text-gray-400 text-sm">
-                            Sci-fi/Family
-                        </div> -->
-                </div>
-            </div>
-            <div class="mt-8">
-                <a href="#">
-                    <img src="/images/cast/amrith.png" alt="Amrith" class="hover:opacity-75 transition ease-in-out duration-150">
-                </a>
-                <div class="mt-2">
-                    <a href="#" class="text-lg mt-2 hover:text-gray-400">Amrith Jayan</a>
-                    <!-- <div class="text-gray-400 text-sm">
-                            Sci-fi/Family
-                        </div> -->
-                </div>
-            </div>
-            <div class="mt-8">
-                <a href="#">
-                    <img src="/images/cast/ninad.jpg" alt="Ninad" class="hover:opacity-75 transition ease-in-out duration-150">
-                </a>
-                <div class="mt-2">
-                    <a href="#" class="text-lg mt-2 hover:text-gray-400">Ninad Kamat</a>
-                    <!-- <div class="text-gray-400 text-sm">
-                            Sci-fi/Family
-                        </div> -->
-                </div>
-            </div>
-            <div class="mt-8">
-                <a href="#">
-                    <img src="/images/cast/veenah.jpg" alt="Veenah" class="hover:opacity-75 transition ease-in-out duration-150">
-                </a>
-                <div class="mt-2">
-                    <a href="#" class="text-lg mt-2 hover:text-gray-400">Veenah Nair</a>
-                    <!-- <div class="text-gray-400 text-sm">
-                            Sci-fi/Family
-                        </div> -->
-                </div>
-            </div>
-            <div class="mt-8">
-                <a href="#">
-                    <img src="/images/cast/vivek.jpg" alt="Vivek" class="hover:opacity-75 transition ease-in-out duration-150">
-                </a>
-                <div class="mt-2">
-                    <a href="#" class="text-lg mt-2 hover:text-gray-400">Vivek Tandon</a>
-                    <!-- <div class="text-gray-400 text-sm">
-                            Sci-fi/Family
-                        </div> -->
-                </div>
-            </div>
-
+            @endif
+            @endforeach
 
         </div>
     </div>
-</div> <!-- Cast end -->
+</div>
+<!-- Cast end -->
 
 </div>
 
