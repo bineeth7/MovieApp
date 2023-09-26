@@ -23,7 +23,6 @@
             </p>
 
             <!-- Director & Producers details -->
-
             <div class="t-12 mt-12">
                 <h4 class="text-gray-300 font-semibold">Featured Crew:</h4>
                 <div class="flex mt-3">
@@ -47,39 +46,48 @@
                     @endforeach
                 </div>
             </div>
-
-
             <!-- Director & Producers details end -->
 
 
-
+            <!-- Trailer -->
+            @if (count($movie['videos']['results']) > 0)
             <div class="mt-10">
-                <a href="https://youtu.be/Lz_jlyGDoqM?si=0TTaNNnx4xoklMMs">
+                <a href="https://youtube.com/watch?v={{ $movie['videos']['results'][0]['key'] }}">
                     <button class="flex items-center bg-red-700 rounded font-semibold px-5 py-4 hover:bg-red-800 transition ease-in-out duration-150">
                         <img src="/images/playicon.png" alt="play icon" class="w-7">
                         <span class="ml-2">Play Trailer</span>
                     </button>
                 </a>
             </div>
+            @endif
+            <!-- Trailer ends -->
+
         </div>
     </div>
 </div> <!--  end movie-info -->
 
+<!-- Cast -->
 <div class="movie-cast border-b border-cyan-400">
     <div class="container mx-auto px-4 py-16">
         <h2 class="text-4xl font-semibold text-cyan-400">Cast</h2>
         <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-5">
+            
+            <!-- @foreach ($movie['credits']['cast'] as $cast) -->
             <div class="mt-8">
                 <a href="#">
                     <img src="/images/cast/babil.jpg" alt="Babil" class="hover:opacity-75 transition ease-in-out duration-150">
                 </a>
                 <div class="mt-2">
                     <a href="#" class="text-lg mt-2 hover:text-gray-400">Babil Khan</a>
-                    <!-- <div class="text-gray-400 text-sm">
+                        <div class="text-gray-400 text-sm">
                             Movie name
-                        </div> -->
+                        </div>
                 </div>
             </div>
+            <!-- @endforeach -->
+
+
+
             <div class="mt-8">
                 <a href="#">
                     <img src="/images/cast/medha.jpg" alt="Medha" class="hover:opacity-75 transition ease-in-out duration-150">
@@ -161,7 +169,8 @@
 
         </div>
     </div>
-</div>
+</div> <!-- Cast end -->
+
 </div>
 
 @endsection
