@@ -12,12 +12,12 @@
         <div class="container mx-auto flex items-center justify-between px-4 py-4">
             <ul class="flex flex-col md:flex-row items-center">
                 <li>
-                    <a href="#">
+                    <a href="{{ route('movies.index') }}">
                     <img class="w-7 h=7" src="https://img.icons8.com/metro/26/movie-projector.png" alt="movie-projector"/>
                     </a>
                 </li> 
                 <li class="md:ml-16 mt-3 md:mt-0">
-                    <a href="#" class="hover:text-gray-400">Movies</a>
+                    <a href="{{ route('movies.index') }}" class="hover:text-gray-400">Movies</a>
                 </li>
                 <li class="md:ml-6 mt-3 md:mt-0">
                     <a href="#" class="hover:text-gray-400">TV Shows</a>
