@@ -15,6 +15,6 @@ class ViewMoviesTest extends TestCase
         $response = $this->get(route('movies.index'));
         $response->assertSuccessful();
 
-        //$response->assertStatus(200);
+        $response->assertSee("Popular Movies");
     }
 }
