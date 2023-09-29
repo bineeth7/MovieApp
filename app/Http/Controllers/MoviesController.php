@@ -13,7 +13,7 @@ class MoviesController extends Controller
     
         $popularMovies = Http::get('https://api.themoviedb.org/3/movie/popular?api_key=' . $apiKey)->json();
         
-        dump($popularMovies);
+        //dump($popularMovies);
 
         $nowPlayingMovies = Http::get('https://api.themoviedb.org/3/movie/now_playing?api_key=' . $apiKey)->json()['results'];
 
