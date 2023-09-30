@@ -84,4 +84,132 @@ private function fakeNowPlayingMovies(){
     ], 200);
 }
 
+private function fakeGenres(){
+    return Http::response([
+        "genres" => [
+            [
+                "id" => 28,
+                "name" => "Action"
+            ],
+            [
+                "id" => 12,
+                "name" => "Adventure"
+            ],
+            [
+                "id" => 16,
+                "name" => "Animation"
+            ],
+            [
+                "id" => 35,
+                "name" => "Comedy"
+            ],
+            [
+                "id" => 80,
+                "name" => "Crime"
+            ],
+            [
+                "id" => 99,
+                "name" => "Documentary"
+            ],
+            [
+                "id" => 18,
+                "name" => "Drama"
+            ],
+            [
+                "id" => 10751,
+                "name" => "Family"
+            ],
+            [
+                "id" => 14,
+                "name" => "Fantasy"
+            ],
+            [
+                "id" => 36,
+                "name" => "History"
+            ],
+            [
+                "id" => 27,
+                "name" => "Horror"
+            ],
+            [
+                "id" => 10402,
+                "name" => "Music"
+            ],
+            [
+                "id" => 9648,
+                "name" => "Mystery"
+            ],
+            [
+                "id" => 10749,
+                "name" => "Romance"
+            ],
+            [
+                "id" => 878,
+                "name" => "Science Fiction"
+            ],
+            [
+                "id" => 10770,
+                "name" => "TV Movie"
+            ],
+            [
+                "id" => 53,
+                "name" => "Thriller"
+            ],
+            [
+                "id" => 10752,
+                "name" => "War"
+            ],
+            [
+                "id" => 37,
+                "name" => "Western"
+            ]
+        ]
+    ], 200);
+}
+
+private function fakeSingleMovie(){
+    return Http::response([
+        "title" => "Fake Jumanji",
+        "overview" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vestibulum velit vel est tristique, in cursus ligula egestas. Ut id arcu eu massa tincidunt elementum. Nunc nec orci auctor, pulvinar nibh eu, ultrices arcu. Sed ut sem vitae est commodo suscipit.",
+        "runtime" => 120,
+        "release_date" => "2023-09-15",
+        "genres" => [
+            [
+                "id" => 28,
+                "name" => "Action"
+            ],
+            [
+                "id" => 12,
+                "name" => "Adventure"
+            ],
+            [
+                "id" => 14,
+                "name" => "Fantasy"
+            ]
+        ],
+        "cast" => [
+            [
+                "name" => "Dwayne Johnson",
+                "character" => "Lead Role"
+            ],
+            [
+                "name" => "Emily Blunt",
+                "character" => "Supporting Role"
+            ]
+        ],
+        "crew" => [
+            [
+                "name" => "Jeanne McCarthy",
+                "job" => "Casting Director"
+            ],
+            [
+                "name" => "John Doe",
+                "job" => "Director"
+            ]
+        ]
+    ], 200);
+}
+
+
+
 }
