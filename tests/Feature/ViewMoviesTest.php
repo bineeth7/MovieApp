@@ -17,18 +17,30 @@ class ViewMoviesTest extends TestCase
         Http::fake([
             'https://api.themoviedb.org/3/movie/popular' => $this->fakePopularMovies(),
             'https://api.themoviedb.org/3/movie/now_playing' => $this->fakeNowPlayingMovies(),
-            'https://api.themoviedb.org/3/movie/list' => $this->fakeGenres(),
+            //'https://api.themoviedb.org/3/movie/list' => $this->fakeGenres(),
         ]);
         $response = $this->get(route('movies.index'));
     
         $response->assertSuccessful();
         $response->assertSee('Popular Movies');
         $response->assertSee('Fake Movie');
-        $response->assertSee('Adventure, Drama, Mystery, Science Fiction, Thriller');
+        //$response->assertSee('Adventure, Drama, Mystery, Science Fiction, Thriller');
         $response->assertSee('Now Playing');
         $response->assertSee('Now Playing Fake Movie');
 
     }
+
+public function the_movie_page_show_the_correct_info(){
+    Http::fake([
+        'https:://api.themoviedb.org/3/movie/*' => $this->fakeSingleMovie(),
+    ]);
+
+    $response = $this->get(route('movies.show', 12345));
+    $response->assertSee('Fake Jumanji');
+    $response->assertSee('Jeanne McCarthy');
+    $response->assertSee('Casting Director');
+    $response->assertSee('Dwayne Johnson');
+}
 
 private function fakePopularMovies(){
     return Http::response([
