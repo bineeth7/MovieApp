@@ -12,10 +12,11 @@ class MoviesController extends Controller
         $apiKey = env('TMDB_API_KEY');
     
         $popularMovies = Http::get('https://api.themoviedb.org/3/movie/popular?api_key=' . $apiKey)->json()['results'];
+         //dd($popularMovies);
+
         $nowPlayingMovies = Http::get('https://api.themoviedb.org/3/movie/now_playing?api_key=' . $apiKey)->json()['results'];
 
-        dd($popularMovies);
-
+        //dd($nowPlayingMovies);
 
         $genresArray = Http::get('https://api.themoviedb.org/3/genre/movie/list?api_key=' . $apiKey)->json()['genres'];
 
@@ -23,9 +24,7 @@ class MoviesController extends Controller
             return [$genre['id']=> $genre['name']];
         });
 
-        //dump($popularMovies);
-        //dump($nowPlayingMovies);
-        //dump($genres);
+        //dd($genres);
 
         return view('movies.index', [
             'popularMovies' => $popularMovies,
