@@ -14,6 +14,8 @@ class MoviesController extends Controller
         $popularMovies = Http::get('https://api.themoviedb.org/3/movie/popular?api_key=' . $apiKey)->json()['results'];
         $nowPlayingMovies = Http::get('https://api.themoviedb.org/3/movie/now_playing?api_key=' . $apiKey)->json()['results'];
 
+        dd($popularMovies);
+
 
         $genresArray = Http::get('https://api.themoviedb.org/3/genre/movie/list?api_key=' . $apiKey)->json()['genres'];
 
