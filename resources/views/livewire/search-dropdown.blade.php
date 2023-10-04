@@ -1,5 +1,5 @@
 <div class="relative mt-3 md:mt-0">
-    <input wire:model.debounce.500="search" type="text" class="bg-pink-50 text-black italic text-sm rounded-full w-64 px-4 pl-10 py-1 focus:outline-none focus:shadow-outline" placeholder="Search">
+    <input wire:model="search" type="text" class="bg-pink-50 text-black italic text-sm rounded-full w-64 px-4 pl-10 py-1 focus:outline-none focus:shadow-outline" placeholder="Search">
     <div class="absolute top-0">
         <svg class="w-5 ml-2 mt-1 text-gray-500" xmlns="http://www.w3.org/2000/svg" style="fill:#000" viewBox="0 0 256 256">
             <g fill="none" stroke-miterlimit="10" font-family="none" font-size="none" font-weight="none" style="mix-blend-mode:normal" text-anchor="none">

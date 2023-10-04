@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Http;
 
 class SearchDropdown extends Component
 {
-    public $search = 'hello there';
+    public $search = '';
     public function render()
     {
         $searchResults = [];
@@ -17,7 +17,7 @@ class SearchDropdown extends Component
             $searchResults = Http::get("https://api.themoviedb.org/3/search/movie?query={$this->search}&api_key={$apiKey}")
                 ->json()['results'];
         }
-        dump($searchResults);
+        //dump($searchResults);
         return view('livewire.search-dropdown', [
             'searchResults' => $searchResults
         ]);
