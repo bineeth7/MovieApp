@@ -10,18 +10,21 @@
             </g>
         </svg>
     </div>
-    <div class="absolute bg-gray-900 bg-opacity-70 text-sm rounded w-64 mt-1">
-    <ul>
-        @if(isset($searchResults['results']))
+    <div class="absolute bg-gray-900 bg-opacity-50 text-sm rounded w-64 mt-1">
+        <ul>
+            @if(isset($searchResults['results']) && count($searchResults['results']) > 0)
             @foreach($searchResults['results'] as $result)
-                <li>
-                    <a href="{{ route('movies.show', ['id' => $result['id']]) }}" class="block hover:bg-gray-900 px-3 py-3">
-                        {{ $result['title'] }}
-                    </a>
-                </li>
+            <li>
+                <a href="{{ route('movies.show', ['id' => $result['id']]) }}" class="block hover:bg-gray-900 px-3 py-3">
+                    {{ $result['title'] }}
+                </a>
+            </li>
             @endforeach
-        @endif
-    </ul>
-</div>
+            @elseif(!empty($search))
+            <li>No results found for "{{ $search }}"</li>
+            @endif
+        </ul>
+    </div>
+
 
 </div>
