@@ -10,17 +10,18 @@
             </g>
         </svg>
     </div>
-    <div class="absolute bg-gray-900 bg-opacity-50 text-sm rounded w-64 mt-1">
-        <ul>
-            <li class="border-b border-gray-800">
-                <a href="#" class="block hover:bg-gray-900 px-3 py-3">{{ $search }}</a>
-            </li>
-            <li class="border-b border-gray-800">
-                <a href="#" class="block hover:bg-gray-900 px-3 py-3">A</a>
-            </li>
-            <li class="border-b border-gray-800">
-                <a href="#" class="block hover:bg-gray-900 px-3 py-3">Avengers</a>
-            </li>
-        </ul>
-    </div>
+    <div class="absolute bg-gray-900 bg-opacity-70 text-sm rounded w-64 mt-1">
+    <ul>
+        @if(isset($searchResults['results']))
+            @foreach($searchResults['results'] as $result)
+                <li>
+                    <a href="{{ route('movies.show', ['id' => $result['id']]) }}" class="block hover:bg-gray-900 px-3 py-3">
+                        {{ $result['title'] }}
+                    </a>
+                </li>
+            @endforeach
+        @endif
+    </ul>
+</div>
+
 </div>

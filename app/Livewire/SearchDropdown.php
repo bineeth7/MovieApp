@@ -1,5 +1,4 @@
 <?php
-//namespace App\Http\Controllers;
 
 namespace App\Livewire;
 
@@ -17,9 +16,11 @@ class SearchDropdown extends Component
     {
         $apiKey = env('TMDB_API_KEY');
         $searchResults = [];
-        $searchResults = Http::get("https://api.themoviedb.org/3/search/movie?query={$this->search}&api_key={$apiKey}")->json();
 
-        dump($searchResults);
+        if (strlen($this->search) >= 2) {
+            $searchResults = Http::get("https://api.themoviedb.org/3/search/movie?query={$this->search}&api_key={$apiKey}")->json();
+        }
+        //dump($searchResults);
         
         return view('livewire.search-dropdown', [
             'searchResults' => $searchResults,
