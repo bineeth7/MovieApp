@@ -14,9 +14,14 @@
         <ul>
             @if(isset($searchResults['results']) && count($searchResults['results']) > 0)
             @foreach($searchResults['results'] as $result)
-            <li>
-                <a href="{{ route('movies.show', ['id' => $result['id']]) }}" class="block hover:bg-gray-900 px-3 py-3">
-                    {{ $result['title'] }}
+            <li class="border-b border-cyan-400">
+                <a href="{{ route('movies.show', ['id' => $result['id']]) }}" class="hover:bg-gray-900 px-3 py-3 flex items-center">
+                    @if($result['poster_path'])
+                    <img src="https://image.tmdb.org/t/p/w92/{{ $result['poster_path']}}" alt="poster" class="w-8">
+                    @else
+                    <img src="https:://via.placeholder.com/50x75" alt="poster" class="w-8">
+                    @endif
+                    <span class="ml-4">{{ $result['title'] }}</span>
                 </a>
             </li>
             @endforeach
