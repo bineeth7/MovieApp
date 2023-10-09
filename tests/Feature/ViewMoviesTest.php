@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use Livewire\Livewire;
 use Tests\TestCase;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -26,6 +27,45 @@ class ViewMoviesTest extends TestCase
         //$response->assertSee('Now Playing Fake Movie');
 
     }
+// Search Dropdown
+public function test_search_dropdown_works_correctly()
+    {
+        // Mocking the MovieDB API response for search query 'jumanji'
+        Http::fake([
+            'https://api.themoviedb.org/3/search/movie?query=jumanji' => $this->fakeSearchMovies(),
+        ]);
+
+        // Testing Livewire component 'search-dropdown'
+        Livewire::test('search-dropdown')
+            ->assertDontSee('Jumanji') // Asserting that 'Jumanji' is not initially visible
+            ->set('search', 'Jumanji') // Setting the search term to 'Jumanji'
+            ->assertSee('Jumanji'); // Asserting that 'Jumanji' is now visible
+    }
+    private function fakeSearchMovies()
+    {
+        return Http::response([
+            'results' => [
+                [
+                    "adult" => false,
+                    "backdrop_path" => "/pYw10zrqfkdm3yD9JTO6vEGQhKy.jpg",
+                    "genre_ids" => [12, 14, 10751],
+                    "id" => 8844,
+                    "original_language" => "en",
+                    "original_title" => "Jumanji",
+                    "overview" => "When siblings Judy and Peter discover an enchanted board game that opens the door to a magical world, they unwittingly invite Alan -- an adult who's been trapped inside the game for 26 years -- into their living room. Alan's only hope for freedom is to finish the game, which proves risky as all three find themselves running from giant rhinoceroses, evil monkeys and other terrifying creatures.",
+                    "popularity" => 18.597,
+                    "poster_path" => "/vgpXmVaVyUL7GGiDeiK1mKEKzcX.jpg",
+                    "release_date" => "1995-12-15",
+                    "title" => "Jumanji",
+                    "video" => false,
+                    "vote_average" => 7.239,
+                    "vote_count" => 9848,
+                ],
+            ],
+        ], 200);
+    }
+
+// Search Dropdown end
 //
     public function test_movie_page_shows_correct_info(){
         Http::fake([
