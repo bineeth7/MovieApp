@@ -21,10 +21,8 @@
         <span class="sr-only">Loading...</span>
     </div>
     <!-- spinner end -->
-
-
+    <!-- search dropdown -->
     <div class="absolute bg-gray-900 bg-opacity-50 text-sm rounded w-64 mt-1">
-
         <ul>
             @if(isset($searchResults['results']) && count($searchResults['results']) > 0)
             @foreach($searchResults['results'] as $result)
@@ -44,6 +42,5 @@
             @endif
         </ul>
     </div>
-
-
+    <!-- search dropdown end -->
 </div>
