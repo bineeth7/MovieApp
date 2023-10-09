@@ -2,9 +2,12 @@
 
 namespace Tests\Feature;
 
+use Livewire\Livewire;
+
 use Tests\TestCase;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+
 
 class ViewMoviesTest extends TestCase
 {
@@ -26,7 +29,7 @@ class ViewMoviesTest extends TestCase
         //$response->assertSee('Now Playing Fake Movie');
 
     }
-//
+
     public function test_movie_page_shows_correct_info(){
         Http::fake([
             'https://api.themoviedb.org/3/movie/*' => $this->fakeSingleMovie(),
@@ -37,8 +40,36 @@ class ViewMoviesTest extends TestCase
         $response->assertSee('Smolder');
 
     }
-    
-//
+    private function test_search_dropdown_works_correctly(){
+        Http::fake([
+            'https://api.themoviedb.org/3/search/movie?query=jumanji' => $this->fakeSearchMovies(),
+        ]);
+        Livewire::test('search-dropdown')
+        ->assertDontSee('Jumanji')
+        ->set('search', 'Jumanji')
+        ->assertSee('Jumanji');
+    }
+    private function fakeSearchMovies(){
+        return Http::response([
+                'result' => [
+                    [
+                        "backdrop_path" => "/pYw10zrqfkdm3yD9JTO6vEGQhKy.jpg",
+                        "genre_ids" => [12, 14, 10751],
+                        "id" => 8844,
+                        "original_language" => "en",
+                        "original_title" => "Jumanji",
+                        "overview" => "When siblings Judy and Peter discover an enchanted board game that opens the door to a magical world, they unwittingly invite Alan -- an adult who's been trapped inside the game for 26 years -- into their living room. Alan's only hope for freedom is to finish the game, which proves risky as all three find themselves running from giant rhinoceroses, evil monkeys and other terrifying creatures.",
+                        "popularity" => 18.597,
+                        "poster_path" => "/vgpXmVaVyUL7GGiDeiK1mKEKzcX.jpg",
+                        "release_date" => "1995-12-15",
+                        "title" => "Jumanji",
+                        "vote_average" => 7.239,
+                        "vote_count" => 9848
+                    ]
+                ]
+        ], 200);
+    }
+
     private function fakePopularMovies(){
         return Http::response([
             'result' => 
