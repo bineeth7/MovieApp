@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
 
-
 class SearchDropdown extends Component
 {
     public $search = '';
