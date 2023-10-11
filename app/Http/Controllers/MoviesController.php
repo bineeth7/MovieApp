@@ -7,19 +7,34 @@ use Illuminate\Support\Facades\Http;
 
 class MoviesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
-        $popularMovies = Http::withToken(config('services.tmdb.token'))
-            ->get('https://api.themoviedb.org/3/movie/popular')
-            ->json()['results'];
+        $apiKey = env('TMDB_API_KEY');
+    
+        $popularMovies = Http::get('https://api.themoviedb.org/3/movie/popular?api_key=' . $apiKey)->json()['results'];
+         //dd($popularMovies);
 
-        dump($popularMovies);
+        $nowPlayingMovies = Http::get('https://api.themoviedb.org/3/movie/now_playing?api_key=' . $apiKey)->json()['results'];
 
-        return view('index');
+        //dd($nowPlayingMovies);
+
+        $genresArray = Http::get('https://api.themoviedb.org/3/genre/movie/list?api_key=' . $apiKey)->json()['genres'];
+
+        $genres = collect($genresArray)->mapWithKeys(function ($genre){
+            return [$genre['id']=> $genre['name']];
+        });
+
+        //dd($genres);
+
+        return view('movies.index', [
+            'popularMovies' => $popularMovies,
+            'nowPlayingMovies' => $nowPlayingMovies,
+            'genres' => $genres,
+            
+        ]);
     }
+    
+
 
     /**
      * Show the form for creating a new resource.
@@ -42,7 +57,16 @@ class MoviesController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $apiKey = env('TMDB_API_KEY');
+    
+        $movie = Http::get('https://api.themoviedb.org/3/movie/' . $id . '?api_key=' . $apiKey . '&append_to_response=credits,videos,images')->json();
+               
+        //dump($movie);
+        
+        return view('show',[
+            'movie' => $movie,
+        ]);
+
     }
 
     /**
