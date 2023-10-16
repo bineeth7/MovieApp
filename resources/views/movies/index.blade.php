@@ -16,7 +16,7 @@
             </div>  
         </div>
         <!-- end popular movies -->
-
+        <div class="border-b border-cyan-400 mt-2 mb-2"></div>
         <!-- now playing start -->
         <div class="now-playing">
             <h2 class="uppercase tracking-wider text-cyan-400 text-lg font-semibold">Now Playing</h2>
