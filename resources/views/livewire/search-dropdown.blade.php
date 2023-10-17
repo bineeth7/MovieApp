@@ -6,6 +6,7 @@
         placeholder="Search"
         @focus="isOpen = true"
         @keydown.escape.window="isOpen = false"
+        @keydown.shift.tab="isOpen = false"
     >
     <!-- search icon -->
     <div class="absolute top-0">
@@ -30,13 +31,13 @@
     <!-- spinner end -->
     <!-- search dropdown -->
     <div 
-        class="absolute bg-gray-900 bg-opacity-50 text-sm rounded w-64 mt-1"
+        class="z-50 absolute bg-gray-900 bg-opacity-50 text-sm rounded w-64 mt-1"
         x-show="isOpen"
         @keydown.escape.window="isOpen = false"    
     >
         <ul>
             @if(isset($searchResults['results']) && count($searchResults['results']) > 0)
-            @foreach($searchResults['results'] as $result)
+            @foreach(collect($searchResults['results'])->take(7) as $result)
             <li class="border-b border-cyan-400">
                 <a href="{{ route('movies.show', ['id' => $result['id']]) }}" class="hover:bg-gray-900 px-3 py-3 flex items-center">
                     @if($result['poster_path'])
