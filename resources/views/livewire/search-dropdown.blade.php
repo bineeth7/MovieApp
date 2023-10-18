@@ -5,6 +5,7 @@
         class="bg-pink-50 text-black italic text-sm rounded-full w-64 px-4 pl-10 py-1 focus:outline-none focus:shadow-outline"
         placeholder="Search"
         @focus="isOpen = true"
+        @keydown="isOpen = true"
         @keydown.escape.window="isOpen = false"
         @keydown.shift.tab="isOpen = false"
     >
@@ -32,14 +33,18 @@
     <!-- search dropdown -->
     <div 
         class="z-50 absolute bg-gray-900 bg-opacity-50 text-sm rounded w-64 mt-1"
-        x-show="isOpen"
+        x-show.transition.opacity="isOpen"
         @keydown.escape.window="isOpen = false"    
     >
         <ul>
             @if(isset($searchResults['results']) && count($searchResults['results']) > 0)
             @foreach(collect($searchResults['results'])->take(7) as $result)
             <li class="border-b border-cyan-400">
-                <a href="{{ route('movies.show', ['id' => $result['id']]) }}" class="hover:bg-gray-900 px-3 py-3 flex items-center">
+                <a 
+                    href="{{ route('movies.show', ['id' => $result['id']]) }}"
+                    class="hover:bg-gray-900 px-3 py-3 flex items-center"
+                    @if ($loop->last) @keydown.tab="isOpen = false" @endif
+                >
                     @if($result['poster_path'])
                     <img src="https://image.tmdb.org/t/p/w92/{{ $result['poster_path']}}" alt="poster" class="w-8">
                     @else
