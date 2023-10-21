@@ -66,7 +66,8 @@
     <!-- Trailer Modal -->
     <div 
         x-show="isOpen" 
-        @click.away="isOpen = false" 
+        @click.away="isOpen = false"
+        @keydown.escape.window="isOpen = false"
         class="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-75 z-50"
     >
         <div class="modal-container bg-gray-900 rounded-lg w-1/2 mx-auto overflow-y-auto p-4">
