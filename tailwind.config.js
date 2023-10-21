@@ -9,7 +9,11 @@ export default {
     extend: {
       width: {
         '96': '34rem',
+      },
+      height: {
+        '96': '28rem',
       }
+       
     },
   },
   plugins: [],
